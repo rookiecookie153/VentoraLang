@@ -8,7 +8,7 @@ typedef struct {
 
 typedef enum {
     VTF_ARG_HELP = 1 << 0,
-    VTF_ARG_VERSION = 1 << 1
+    VTF_ARG_VERBOSE = 1 << 1
 } VT_ArgFlags;
 
 VT_Args VT_parse_args(int argc, char **argv);
