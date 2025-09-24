@@ -3,7 +3,7 @@
 #include "log.h"
 
 // MAJOR / MINOR / PATCH
-#define VT_VERSION "0.1.0"
+#define VT_VERSION "0.0.0"
 
 int main(int argc, char **argv) {
     VT_parse_args(argc, argv);
