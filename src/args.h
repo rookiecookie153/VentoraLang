@@ -1,16 +1,16 @@
 #ifndef ARGS_H
 #define ARGS_H
 
+#include <stdbool.h>
+
 typedef struct {
     char* filename;
-    int flags;
+    bool flag_verbose;
+    bool flag_help;
 } VT_Args;
 
-typedef enum {
-    VTF_ARG_HELP = 1 << 0,
-    VTF_ARG_VERBOSE = 1 << 1
-} VT_ArgFlags;
+void VT_parse_args(int argc, char **argv);
 
-VT_Args VT_parse_args(int argc, char **argv);
+extern VT_Args VT_mainargs;
 
 #endif

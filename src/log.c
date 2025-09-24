@@ -1,13 +1,12 @@
-#include "log.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include "log.h"
+#include "args.h"
 
-int VT_verbosity = 0;
-
-void VT_log(int level, const char *fmt, ...) {
-    if (level > VT_verbosity) { return; };
+void VT_log(const char *fmt, ...) {
+    if (VT_mainargs.flag_verbose) { return; };
     va_list args;
     va_start(args, fmt);
     vfprintf(stderr, fmt, args);
-    va_end();
+    va_end(args);
 }
