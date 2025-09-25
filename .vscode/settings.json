@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "args.h": "c"
+        "args.h": "c",
+        "log.h": "c"
     }
 }
