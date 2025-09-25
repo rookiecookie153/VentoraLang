@@ -9,5 +9,5 @@ void VT_log(int level, const char *fmt, ...) {
     va_list args;
     va_start(args, fmt);
     vfprintf(stderr, fmt, args);
-    va_end();
+    va_end(args);
 }
