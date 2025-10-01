@@ -1,7 +1,15 @@
 #ifndef OPCODE_H
 #define OPCODE_H
 
-#define VT_SIZE_OP 6
+#define VT_SIZE_OP 4
+
+#define VT_SIZE_A 8
+#define VT_SIZE_B 8
+#define VT_SIZE_C 8
+
+#define VT_POS_OP 0
+#define VT_POS_A (VT_POS_OP + VT_SIZE_OP)
+#define VT_POS_B ()
 
 typedef enum {
     // math

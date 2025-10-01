@@ -10,7 +10,7 @@ void VTV_init(VT_virt *vm) {
 void VTV_exec(VT_virt *vm, VT_instruction *program) {
     VT_instruction ip = 0;
     for (;;) {
-        switch (program[ip++] >> 26) {
+        switch (program[ip++] >> (32 - VT_SIZE_OP)) {
 
             // MATH OPS
             case VTOP_ADD:
