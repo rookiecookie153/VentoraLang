@@ -2,6 +2,9 @@
 #define VM_H
 
 #include <stdint.h>
+#include "opcode.h"
+
+typedef uint32_t VT_instruction;
 
 typedef enum {
     TYPE_INT,
@@ -25,6 +28,6 @@ typedef struct {
 } VT_virt;
 
 void VTV_init(VT_virt *vm);
-void VTV_exec(VT_virt *vm, uint32_t *program);
+void VTV_exec(VT_virt *vm, VT_instruction *program);
 
 #endif
