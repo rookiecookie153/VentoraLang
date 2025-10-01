@@ -2,13 +2,11 @@
 #define OPCODE_H
 
 typedef enum {
-    // stack
-    VTOP_PUSH,
-    VTOP_POP,
-
     // math
     VTOP_ADD,
     VTOP_SUB,
+    VTOP_MUL,
+    VTOP_DIV,
 
     // log
     VTOP_PRINT,

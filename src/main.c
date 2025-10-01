@@ -15,12 +15,10 @@ int main(int argc, char **argv) {
     VT_virt vm;
     VTV_init(&vm);
 
-    int program[] = {
-        VTOP_PUSH, 2,
-        VTOP_PUSH, 2,
-        VTOP_ADD,
-        VTOP_PRINT,
-        VTOP_HALT
+    uint32_t program[] = {
+        (VTOP_ADD << 26),
+        (VTOP_PRINT << 26),
+        (VTOP_HALT << 26)
     };
 
     VTV_exec(&vm, program);

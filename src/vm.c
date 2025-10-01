@@ -1,37 +1,27 @@
 #include <stdio.h>
 #include "vm.h"
 #include "opcode.h"
-
-void VTV_pushint(VT_virt *vm, int x) {
-    vm->stack[vm->sp++] = x;
-}
-
-int VTV_popint(VT_virt *vm) {
-    return vm->stack[--vm->sp];
-}
+#include "log.h"
 
 void VTV_init(VT_virt *vm) {
-    vm->sp = 0;
+    
 }
 
-void VTV_exec(VT_virt *vm, int *program) {
+void VTV_exec(VT_virt *vm, uint32_t *program) {
     uint32_t ip = 0;
     for (;;) {
-        switch (program[ip++]) {
-            case VTOP_PUSH:
-                VTV_pushint(vm, program[ip++]);
-                break;
-            case VTOP_POP:
-                break;
+        switch (program[ip++] >> 26) {
             case VTOP_ADD:
-                int a = VTV_popint(vm);
-                int b = VTV_popint(vm);
-                VTV_pushint(vm, a + b);
+                VT_log("ADD\n");
+                break;
+            case VTOP_SUB:
+                VT_log("SUB\n");
                 break;
             case VTOP_PRINT:
-                printf("%d\n", VTV_popint(vm));
+                VT_log("PRINT\n");
                 break;
             case VTOP_HALT:
+                VT_log("HALT\n");
                 return;
         }
     }

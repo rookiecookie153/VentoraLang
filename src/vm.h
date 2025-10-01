@@ -3,14 +3,28 @@
 
 #include <stdint.h>
 
+typedef enum {
+    TYPE_INT,
+    TYPE_FLOAT,
+    TYPE_STRING,
+    TYPE_PTR
+} VT_valuetype;
+
 typedef struct {
-    int stack[256];
-    uint32_t sp;
+    VT_valuetype type;
+    union {
+        int i;
+        float f;
+        char* s;
+        void* p;
+    };
+} VT_register;
+
+typedef struct {
+    VT_register registers[256];
 } VT_virt;
 
 void VTV_init(VT_virt *vm);
-void VTV_exec(VT_virt *vm, int *program);
-void VTV_pushint(VT_virt *vm, int x);
-int VTV_popint(VT_virt *vm);
+void VTV_exec(VT_virt *vm, uint32_t *program);
 
 #endif

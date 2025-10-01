@@ -12,6 +12,7 @@ void VT_parse_args(int argc, char **argv) {
     }
 
     int opt;
+    opterr = 0;
     while ((opt = getopt(argc, argv, "hv")) != -1) {
         switch (opt) {
             case 'h':
