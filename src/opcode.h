@@ -1,6 +1,10 @@
 #ifndef OPCODE_H
 #define OPCODE_H
 
+#define VT_SIZE_OP 7
+
+typedef uint32_t VT_instruction;
+
 typedef enum {
     // math
     VTOP_ADD,

@@ -17,7 +17,7 @@ typedef struct {
         float f;
         char* s;
         void* p;
-    };
+    } data;
 } VT_register;
 
 typedef struct {

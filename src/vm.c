@@ -15,7 +15,13 @@ void VTV_exec(VT_virt *vm, uint32_t *program) {
                 VT_log("ADD\n");
                 break;
             case VTOP_SUB:
-                VT_log("SUB\n");
+                VT_log("SUBTRACT\n");
+                break;
+            case VTOP_MUL:
+                VT_log("MULTIPLY\n");
+                break;
+            case VTOP_DIV:
+                VT_log("DIVIDE\n");
                 break;
             case VTOP_PRINT:
                 VT_log("PRINT\n");
