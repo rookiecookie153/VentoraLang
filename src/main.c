@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     VT_virt vm;
     VTV_init(&vm);
 
-    uint32_t program[] = {
+    VT_instruction program[] = {
         (VTOP_ADD << 26),
         (VTOP_PRINT << 26),
         (VTOP_HALT << 26)

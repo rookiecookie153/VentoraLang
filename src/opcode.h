@@ -9,7 +9,14 @@
 
 #define VT_POS_OP 0
 #define VT_POS_A (VT_POS_OP + VT_SIZE_OP)
-#define VT_POS_B ()
+#define VT_POS_B (VT_POS_A + VT_SIZE_A)
+#define VT_POS_C (VT_POS_B + VT_SIZE_B)
+
+#define VT_MAKE_iABC(i,a,b,c) ((i << 26) | (a << (VT_SIZE_A)) | b | c)
+
+typedef enum {
+    VTOP_TYPE_iABC
+} VT_optype;
 
 typedef enum {
     // math
